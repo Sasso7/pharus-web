@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Pharus | Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- El título que desencadenará el Easter Egg -->
+         <img src="logo.png" id="logo-terminal" alt="Logo Terminal 9 Games" class="logo-img">
+        <h1 id="logo-principal">Formulario de Reclutamiento</h1>
+        <p class="subtitle" id="subtitulo-header">Suscribete y ayuda a encontrar un nuevo hogar para la humanidad.</p>
+
+        <!-- Formulario -->
+        <form id="formulario-pharus">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required>
+            </div>
+
+             <div class="form-group">
+                <label for="mail">Dirección de e-mail:</label>
+                <input type="text" id="mail" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="edad">Edad (Años Terrestres):</label>
+                <input type="number" id="edad" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vinculos">¿Posee vínculos afectivos ?</label>
+                <select id="vinculos" required>
+                    <option value="">Seleccione una opción...</option>
+                    <option value="no">No, no tengo vinculos afectivos.</option>
+                    <option value="si">Sí, dejaría seres queridos atrás.</option>
+                </select>
+            </div>
+
+            <button type="submit" id="btn-enviar">Terminar Formulario</button>
+        </form>
+
+        <!-- Pantallas ocultas -->
+        <div id="pantalla-carga" class="oculto">
+            <p id="texto-carga">Analizando datos ingresados...</p>
+        </div>
+
+        <div id="pantalla-resultado" class="oculto">
+            <h2 id="titulo-resultado">EVALUACIÓN APROBADA</h2>
+            <p id="texto-resultado">En breve recibirá instrucciones en su dirección de mail.</p>
+            <p>Código de acceso: <strong id="token-display"></strong></p>
+            <p class="small-text">No pierda este código.</p>
+        </div>
+    </div>
+
+    <footer class="disclaimer">
+        <p>Los datos ingresados no son almacenados ni recopilados de ninguna forma. Esta plataforma es un producto ficticio desarrollado por <strong>Terminal 9 Games</strong> para el videojuego <em>Proyecto Pharus</em> y carece de validez legal o incidencia en la realidad.</p>
+    </footer>
+    <!-- Carga modular de scripts -->
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

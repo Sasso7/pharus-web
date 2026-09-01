@@ -1,0 +1,182 @@
+:root {
+    /* =========================================
+       VARIABLES DE ARTE - EDITABLE
+       ========================================= */
+    --color-fondo: #6b86b8;
+    --color-texto: #1C1C1C;
+    
+    /* Variables para el Easter Egg (Corrupción) */
+    --color-corrupcion: #5C2E2F;
+    --color-fondo-corrupto: #7a7171;
+
+    /* Tipografía */
+    --fuente-principal: 'Courier New', Courier, monospace;
+}
+
+/* =========================================
+   ESTRUCTURA BASE 
+   ========================================= */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border: 1px solid var(--color-texto);
+    max-width: 500px;
+    width: 100%;
+    transition: border-color 0.5s ease;
+}
+
+#logo-principal {
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed var(--color-texto);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    background-color: transparent;
+    border: 1px solid var(--color-texto);
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+    border: none;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.oculto {
+    display: none;
+}
+
+#pantalla-resultado {
+    text-align: center;
+    border: 2px solid var(--color-texto);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.small-text {
+    font-size: 0.7em;
+    opacity: 0.8;
+}
+
+/* =========================================
+   ESTADO CORRUPTO (SE ACTIVA VÍA JS)
+   ========================================= */
+body.corrupted {
+    background-color: var(--color-fondo-corrupto);
+    color: var(--color-corrupcion);
+}
+
+body.corrupted .container {
+    border-color: var(--color-corrupcion);
+}
+
+body.corrupted input, 
+body.corrupted select {
+    border-color: var(--color-corrupcion);
+    color: var(--color-corrupcion);
+}
+
+body.corrupted button {
+    background-color: var(--color-corrupcion);
+    color: var(--color-fondo-corrupto);
+}
+
+/* =========================================
+   LOGO Y PIE DE PÁGINA
+   ========================================= */
+.logo-img {
+    display: block;
+    max-width: 300px; 
+    margin: 0 auto 15px auto;
+    opacity: 0.9;
+}
+
+.disclaimer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.65em;
+    opacity: 1.0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Opcional: Para que el texto legal también cambie al rojo visceral en el Easter Egg */
+body.corrupted .disclaimer {
+    color: var(--color-corrupcion);
+}
+
+/* =========================================
+   EFECTO CORRUPCIÓN PARA EL LOGO ORIGINAL
+   ========================================= */
+body.corrupted .logo-img {
+    /* Convierte el logo a rojo sangre intenso mediante filtros matemáticos */
+    filter: grayscale(100%) sepia(100%) hue-rotate(315deg) saturate(600%) brightness(0.7) contrast(150%);
+    
+    /* Le bajamos un poco la opacidad para que parezca que la pantalla falla */
+    opacity: 0.6;
+}
+
+body {
+    background-color: var(--color-fondo);
+    /* Crea un patrón de rayas horizontales sutiles simulando un viejo monitor CRT */
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0) 50%, 
+        rgba(0, 0, 0, 0.05) 50%
+    );
+    background-size: 100% 4px; /* Altura de cada línea de la scanline */
+    
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
